@@ -1,0 +1,82 @@
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: var(--color-surface-1);
+  gap: 16px;
+  @include on-md {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contentWrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    @include on-md {
+      gap: 24px;
+    }
+
+    .deleteIcon {
+      min-width: 16px;
+    }
+
+    .deleteButton {
+      color: var(--color-icons);
+      border: 0;
+      background-color: transparent;
+      padding: 0;
+      cursor: pointer;
+
+      @include hover(color, var(--color-accent-hover));
+    }
+
+    .itemImage {
+      padding: 7px;
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      object-position: center;
+      flex-shrink: 0;
+
+      @include hover(transform, scale($image-hover-scale));
+    }
+
+    .itemName {
+      @extend .body-text;
+      text-decoration: none;
+      color: var(--color-white);
+      @include hover(color, var(--color-accent-hover));
+    }
+  }
+
+  .quantityPriceWrapper {
+    display: flex;
+    justify-content: space-between;
+    @include on-md {
+      justify-content: flex-start;
+      gap: 24px;
+    }
+    .quantityControls {
+      display: flex;
+      align-items: center;
+      .quantity {
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: default;
+      }
+    }
+
+    .price {
+      width: 80px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 140%;
+    }
+  }
+}

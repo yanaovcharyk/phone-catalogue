@@ -1,0 +1,32 @@
+.sliderWrapper {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  width: 100%;
+
+  @include on-md {
+    margin-top: 64px;
+  }
+
+  @include on-lg {
+    margin-top: 80px;
+  }
+
+  .cardsWrapper {
+    display: flex;
+    width: 100%;
+
+    .swiperSlide {
+      width: auto;
+      flex: 0 0 auto;
+    }
+
+    .skeletonWrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
+}

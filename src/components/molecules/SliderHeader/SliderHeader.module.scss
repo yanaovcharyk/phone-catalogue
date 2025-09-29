@@ -1,0 +1,15 @@
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    padding: 0;
+  }
+
+  .sliderButtons {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+  }
+}

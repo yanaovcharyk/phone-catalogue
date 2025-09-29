@@ -1,0 +1,22 @@
+.colorButton {
+  box-sizing: border-box;
+  background-color: #fcdbc1;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--color-black);
+  outline: 1px solid var(--color-elements);
+  cursor: pointer;
+
+  @include hover(outline-color, var(--color-secondary));
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    @include hover(outline-color, var(--color-elements));
+  }
+}
+
+.isSelected {
+  outline-color: var(--color-white);
+}

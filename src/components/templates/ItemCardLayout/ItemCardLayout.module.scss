@@ -1,0 +1,71 @@
+.itemCard {
+  margin-bottom: 56px;
+
+  @include on-md {
+    margin-bottom: 64px;
+  }
+
+  @include on-lg {
+    margin-bottom: 81px;
+  }
+}
+
+h2 {
+  padding-top: 16px;
+  padding-bottom: 36px;
+  width: 100%;
+
+  @include on-md {
+    padding-bottom: 40px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+
+  @include on-md {
+    gap: 17px;
+    flex-direction: row;
+  }
+
+  @include on-lg {
+    gap: 64px;
+  }
+}
+
+.selectorSection {
+  width: 100%;
+}
+
+.loaderWrapper {
+  position: relative;
+}
+
+.loadingPageWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.errorContainer {
+  margin-top: 24px;
+}
+
+.detailsError {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  gap: 12px;
+}
+
+.errorIcon {
+  font-size: 3rem;
+}
+
+.detailsError small {
+  color: #666;
+}

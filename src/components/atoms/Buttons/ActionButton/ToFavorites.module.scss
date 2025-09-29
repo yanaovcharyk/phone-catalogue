@@ -1,0 +1,31 @@
+.toFavoritesButton {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-surface-2);
+  border: 1px solid #323542;
+  padding: 12px 12px;
+  cursor: pointer;
+
+  @include hover(background-color, var(--color-icons));
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    @include hover(outline-color, var(--color-elements));
+  }
+}
+
+.toFavoritesButtonSelected {
+  background-color: var(--color-black);
+}
+
+.toFavoritesSelectedIcon {
+  fill: var(--color-red);
+  font-size: 16px;
+  border-color: var(--color-elements);
+}
+
+.toFavoritesIcon {
+  fill: var(--color-white);
+  font-size: 16px;
+}

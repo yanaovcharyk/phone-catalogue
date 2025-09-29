@@ -1,0 +1,109 @@
+.dropdownSort {
+  min-width: 136px;
+
+  @include on-md {
+    min-width: 187px;
+  }
+
+  @include on-lg {
+    min-width: 176px;
+  }
+}
+
+.dropdownPagination {
+  min-width: 136px;
+
+  @include on-lg {
+    min-width: 128px;
+  }
+}
+
+.dropdownLabel {
+  @extend small;
+  color: var(--color-secondary);
+  margin-bottom: 4px;
+}
+
+.dropdownTrigger {
+  @extend .button-text;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-surface-2);
+  cursor: pointer;
+
+  .dropdownPlaceholder {
+    color: var(--color-white);
+  }
+
+  .dropdownIconWrapper {
+    color: var(--color-secondary);
+  }
+
+  &:hover {
+    border-color: var(--color-icons);
+
+    .dropdownIconWrapper {
+      color: var(--color-icons);
+    }
+  }
+
+  &:focus,
+  &[data-state='open'] {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .dropdownIcon {
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.dropdownContent {
+  box-sizing: border-box;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-elements);
+  margin-top: 4px;
+  padding: 8px 0;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05); /* Змінив на rgba для кращої адаптивності */
+  min-width: 136px;
+
+  &.dropdownSort {
+    @include on-md {
+      min-width: 187px;
+    }
+
+    @include on-lg {
+      min-width: 176px;
+    }
+  }
+
+  &.dropdownPagination {
+    @include on-lg {
+      min-width: 128px;
+    }
+  }
+}
+
+.dropdownItem {
+  @extend .button-text;
+  font-weight: 600;
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  color: var(--color-secondary);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: var(--color-surface-2);
+    color: var(--color-white);
+  }
+}

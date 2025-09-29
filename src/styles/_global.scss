@@ -1,0 +1,227 @@
+@use './variables';
+@use './mixins';
+
+// CSS Variables for theming
+
+:root {
+  --color-secondary: #{variables.$dark-secondary};
+  --color-icons: #{variables.$dark-icons};
+  --color-elements: #{variables.$dark-elements};
+  --color-surface-2: #{variables.$dark-surface-2};
+  --color-surface-1: #{variables.$dark-surface-1};
+  --color-black: #{variables.$dark-black};
+  --color-white: #{variables.$dark-white};
+  --color-accent: #{variables.$dark-accent};
+  --color-green: #{variables.$dark-green};
+  --color-red: #{variables.$dark-red};
+  --color-accent-hover: #{variables.$dark-accent-hover};
+  --color-skeleton-bg-start: #{variables.$dark-skeleton-bg-start};
+  --color-skeleton-bg-highlight: #{variables.$dark-skeleton-bg-highlight};
+  --color-skeleton-bg-end: #{variables.$dark-skeleton-bg-end};
+  --color-icon-filter: brightness(0) invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-secondary: #{variables.$light-secondary};
+    --color-icons: #{variables.$light-icons};
+    --color-elements: #{variables.$light-elements};
+    --color-surface-2: #{variables.$light-surface-2};
+    --color-surface-1: #{variables.$light-surface-1};
+    --color-black: #{variables.$light-black};
+    --color-white: #{variables.$light-white};
+    --color-accent: #{variables.$light-accent};
+    --color-green: #{variables.$light-green};
+    --color-red: #{variables.$light-red};
+    --color-accent-hover: #{variables.$light-accent-hover};
+    --color-skeleton-bg-start: #{variables.$light-skeleton-bg-start};
+    --color-skeleton-bg-highlight: #{variables.$light-skeleton-bg-highlight};
+    --color-skeleton-bg-end: #{variables.$light-skeleton-bg-end};
+  }
+}
+
+[data-theme='light'] {
+  --color-secondary: #{variables.$light-secondary};
+  --color-icons: #{variables.$light-icons};
+  --color-elements: #{variables.$light-elements};
+  --color-surface-2: #{variables.$light-surface-2};
+  --color-surface-1: #{variables.$light-surface-1};
+  --color-black: #{variables.$light-black};
+  --color-white: #{variables.$light-white};
+  --color-accent: #{variables.$light-accent};
+  --color-green: #{variables.$light-green};
+  --color-red: #{variables.$light-red};
+  --color-accent-hover: #{variables.$light-accent-hover};
+  --color-skeleton-bg-start: #{variables.$light-skeleton-bg-start};
+  --color-skeleton-bg-highlight: #{variables.$light-skeleton-bg-highlight};
+  --color-skeleton-bg-end: #{variables.$light-skeleton-bg-end};
+  --color-icon-filter: brightness(0) invert(0);
+}
+
+[data-theme='dark'] {
+  --color-secondary: #{variables.$dark-secondary};
+  --color-icons: #{variables.$dark-icons};
+  --color-elements: #{variables.$dark-elements};
+  --color-surface-2: #{variables.$dark-surface-2};
+  --color-surface-1: #{variables.$dark-surface-1};
+  --color-black: #{variables.$dark-black};
+  --color-white: #{variables.$dark-white};
+  --color-accent: #{variables.$dark-accent};
+  --color-green: #{variables.$dark-green};
+  --color-red: #{variables.$dark-red};
+  --color-accent-hover: #{variables.$dark-accent-hover};
+  --color-skeleton-bg-start: #{variables.$dark-skeleton-bg-start};
+  --color-skeleton-bg-highlight: #{variables.$dark-skeleton-bg-highlight};
+  --color-skeleton-bg-end: #{variables.$dark-skeleton-bg-end};
+}
+
+html {
+  font-size: variables.$default-font-size;
+}
+
+body {
+  font-family: 'Mont', sans-serif;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: -0.01em;
+
+  @include mixins.on-md {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 31px;
+  letter-spacing: 0;
+
+  @include mixins.on-md {
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+  }
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+
+  @include mixins.on-md {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: 0;
+  }
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+
+  @include mixins.on-md {
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0;
+  }
+}
+
+small {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0;
+}
+
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+.button-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0;
+}
+
+p,
+.body-text {
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 11px;
+  letter-spacing: 0.04em;
+}
+
+// negates @mixin content-container for full-width components
+.full-width {
+  margin-inline: variables.$content-container-inline * -1;
+
+  @include mixins.on-sm {
+    margin-inline: variables.$content-container-inline-sm * -1;
+  }
+}
+
+// negates @mixin content-container for full-width components (before xl only)
+.full-width-xl {
+  margin-inline: variables.$content-container-inline * -1;
+
+  @include mixins.on-sm {
+    margin-inline: variables.$content-container-inline-sm * -1;
+  }
+
+  @include mixins.on-xl {
+    margin-inline: 0;
+  }
+}
+
+// negates @mixin content-container for full-width components (mobile only)
+.full-width-sm {
+  margin-inline: variables.$content-container-inline * -1;
+
+  @include mixins.on-sm {
+    margin-inline: 0;
+  }
+}
+
+// #region Skeletons
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+%skeleton-base {
+  background: linear-gradient(
+    90deg,
+    var(--color-skeleton-bg-start) 25%,
+    var(--color-skeleton-bg-highlight) 50%,
+    var(--color-skeleton-bg-end) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+// #endregion
